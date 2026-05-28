@@ -30,7 +30,7 @@ Futuristic dark-themed website about the Stellar blockchain ecosystem.
 
 Access Stellar markets directly:
 
-https://stellarterm.com/markets/
+https://stellarterm.com/markets/?search=xstellar.bid
 
 ## Installation
 
