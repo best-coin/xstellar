@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="XSTELLAR - Explore the Stellar Blockchain ecosystem, learn how to buy XLM, and access StellarTerm markets with a secure dark futuristic experience." />
+  <meta name="keywords" content="XSTELLAR, Stellar Blockchain, XLM, StellarTerm, crypto, blockchain, Stellar Lumens" />
+  <meta name="author" content="XSTELLAR" />
+  <meta property="og:title" content="XSTELLAR | Stellar Blockchain Experience" />
+  <meta property="og:description" content="Safe, dynamic and futuristic Stellar blockchain website with guides and market access." />
+  <meta property="og:type" content="website" />
+  <title>XSTELLAR | Stellar Blockchain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #060816;
+      color: #ffffff;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(0, 195, 255, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(92, 0, 255, 0.2), transparent 30%);
+      z-index: -2;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #0ff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, #7df9ff, transparent),
+        radial-gradient(2px 2px at 160px 120px, #fff, transparent);
+      background-repeat: repeat;
+      background-size: 220px 220px;
+      opacity: 0.4;
+      z-index: -1;
+      animation: moveStars 80s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-220px); }
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #03040b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 6px;
+      color: #00e5ff;
+      text-shadow: 0 0 20px #00e5ff;
+      animation: pulse 2s infinite;
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      color: #a6b1ff;
+      font-size: 1rem;
+      letter-spacing: 3px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(7, 11, 25, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00e5ff, #7b2cff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 25px rgba(0,229,255,0.6);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #cdd7ff;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ffffff, #00e5ff, #b86cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #d7ddff;
+      font-size: 1.15rem;
+      margin-bottom: 35px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00e5ff, #7b2cff);
+      color: white;
+      box-shadow: 0 0 25px rgba(0,229,255,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 0 40px rgba(0,229,255,0.8);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #b6c0ff;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      transition: 0.35s ease;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0,229,255,0.4);
+      box-shadow: 0 0 30px rgba(0,229,255,0.18);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .step {
+      background: linear-gradient(180deg, rgba(0,229,255,0.08), rgba(123,44,255,0.08));
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step-number {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00e5ff, #7b2cff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+    }
+
+    .social-comments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .comment-box {
+      padding: 28px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      border-left: 4px solid #00e5ff;
+    }
+
+    .comment-box p {
+      color: #d8dcff;
+      margin-bottom: 18px;
+    }
+
+    .comment-user {
+      color: #00e5ff;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #9ca7d9;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.3);
+    }
+
+    .floating-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(0,229,255,0.08);
+      filter: blur(60px);
+      top: 10%;
+      left: -120px;
+      z-index: -1;
+      animation: floatGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes floatGlow {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(40px); }
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      header {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div id="loader">
+    <div class="loader-logo">XSTELLAR</div>
+    <div class="loading-text">INITIALIZING STELLAR NETWORK...</div>
+  </div>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon">✦</div>
+      XSTELLAR
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#buy">Buy XLM</a>
+      <a href="#community">Community</a>
+      <a href="#market">Market</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="floating-glow"></div>
+
+    <div class="hero-content">
+      <h1>Explore The Future Of The Stellar Blockchain</h1>
+      <p>
+        XSTELLAR delivers a modern gateway into the Stellar ecosystem with a futuristic dark design, educational guides, secure blockchain information, and direct access to StellarTerm markets.
+      </p>
+
+      <div class="button-group">
+        <a class="btn btn-primary" href="https://stellarterm.com/markets/?search=xstellar.bid" target="_blank" rel="noopener noreferrer">
+          Launch StellarTerm Market
+        </a>
+
+        <a class="btn btn-secondary" href="#buy">
+          Learn How To Buy XLM
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>Why Stellar?</h2>
+      <p>
+        Stellar is a fast and low-cost blockchain network designed for payments, tokenization, and global financial access.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>⚡ Ultra Fast</h3>
+        <p>
+          Transactions settle in seconds, making Stellar ideal for modern digital payments and transfers.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔒 Secure & Reliable</h3>
+        <p>
+          Stellar uses a decentralized network architecture built for security, trust, and scalability.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🌍 Global Access</h3>
+        <p>
+          Connect users, businesses, and assets worldwide with a borderless blockchain infrastructure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="buy">
+    <div class="section-title">
+      <h2>How To Buy XLM</h2>
+      <p>
+        New to crypto? Follow these beginner-friendly steps to safely purchase Stellar Lumens (XLM).
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Create An Exchange Account</h3>
+        <p>
+          Register with a trusted crypto exchange that supports Stellar Lumens (XLM).
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Verify Identity</h3>
+        <p>
+          Complete account verification and enable two-factor authentication for better security.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Deposit Funds</h3>
+        <p>
+          Add funds using bank transfer, debit card, or supported payment methods.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Buy XLM</h3>
+        <p>
+          Search for XLM on the exchange and complete your purchase securely.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="section-title">
+      <h2>Community Feedback</h2>
+      <p>
+        See what users are saying about the Stellar ecosystem and XSTELLAR experience.
+      </p>
+    </div>
+
+    <div class="social-comments">
+      <div class="comment-box">
+        <p>
+          “The XSTELLAR interface feels futuristic and makes learning Stellar simple for beginners.”
+        </p>
+        <div class="comment-user">— @CryptoNova</div>
+      </div>
+
+      <div class="comment-box">
+        <p>
+          “Fast design, amazing animations, and direct access to StellarTerm markets. Very smooth.”
+        </p>
+        <div class="comment-user">— @BlockchainWave</div>
+      </div>
+
+      <div class="comment-box">
+        <p>
+          “I learned how to buy XLM in minutes. Great educational layout and secure feel.”
+        </p>
+        <div class="comment-user">— @StellarGalaxy</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="market">
+    <div class="section-title">
+      <h2>Access The Stellar Market</h2>
+      <p>
+        Enter the Stellar trading ecosystem and explore decentralized asset markets.
+      </p>
+    </div>
+
+    <div style="text-align:center; margin-top: 20px;">
+      <a class="btn btn-primary" href="https://stellarterm.com/markets/?search=xstellar.bid" target="_blank" rel="noopener noreferrer">
+        Open StellarTerm Markets
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 XSTELLAR — Powered by the Stellar Blockchain Universe.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1800);
+    });
+
+    const cards = document.querySelectorAll('.card, .step, .comment-box');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0px)';
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(40px)';
+      card.style.transition = 'all 0.8s ease';
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
