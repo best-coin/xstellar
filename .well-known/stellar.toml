@@ -1,0 +1,199 @@
+[DOCUMENTATION]
+ORG_NAME="XSTELLAR"
+ORG_URL="https://xstellar.bid"
+ORG_LOGO="https://xstellar.bid/images/logo.png"
+
+[[CURRENCIES]]
+code="KNEX"
+name="Knexcoin"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+desc="Knexcoin is the cornerstone of a smarter digital economy, designed to streamline transactions and power innovation. Built for efficiency and trust, KNEX serves as a reliable medium of exchange, enabling a borderless financial future with cutting-edge blockchain technology."
+conditions="A total of 100 billions KNEX tokens have been issued, ensuring stability and preventing additional emissions. KNEX is designed for long-term growth and adaptability in a rapidly evolving ecosystem."
+image="https://xstellar.bid/images/KNEX.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="BARD"
+name="BARD Crypto"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+desc="The BARD Crypto is a digital asset that is designed to serve as a utility token within the BARD ecosystem, which aims to facilitate the development and promotion of the Neuralink Elon's Musk and Google Bard AI."
+conditions="There will only ever be 100 billions BARD."
+image="https://xstellar.bid/images/BARD.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="HASHDEX"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+name="Hashdex"
+image="https://xstellar.bid/images/HASHDEX.png"
+desc="Hashdex Nasdaq Crypto Index US ETF"
+conditions="There will only ever be 100 billions HASHDEX."
+status="live"
+display_decimals=7
+anchor_asset_type="Crypto"
+anchor_asset="XLM"
+
+[[CURRENCIES]]
+code="XRPBANK"
+status="live"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+name="XRP Bank"
+desc="XRP Bank is a NEW native token backed by Official Ripple International Bank"
+image="https://xstellar.bid/images/XRPBANK.png"
+is_unlimited=true
+is_asset_anchored=true
+anchor_asset_type="crypto"
+anchor_asset="XRP"
+
+[[CURRENCIES]]
+code="JMF"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+name="JM Financial 8.30%"
+desc="Issuer: JM Financial Products Limited • Yeild: 8.30% • Tenure: 100 months • Ratings: AA"
+is_asset_anchored=true
+image="https://xstellar.bid/images/JMF.png"
+anchor_asset_type="bond"
+anchor_asset="JM Financial Bond"
+status="live"
+
+[[CURRENCIES]]
+code="RNX"
+display_decimals=7
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+anchor_asset_type="crypto"
+name="RippleNetX"
+desc="Bridge Between Ripple (XRP) and Stellar (XLM) for Seamless Interoperability."
+image="https://xstellar.bid/images/RNX.png"
+is_unlimited=true
+status="live"
+# Stellar development Foundation (SDF) and RippleXRP announcing RippleNetX bridge token live on Stellar Network.
+
+[[CURRENCIES]]
+code="BTCTrump"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+name="Bitcoin Trump"
+desc="Bitcoin mining may be our last line of defense against a CBDC,” Trump posted shortly before midnight on Tuesday. “Biden's hatred of Bitcoin only helps China, Russia, and the Radical Communist Left. We want all the remaining Bitcoin to be MADE IN THE USA! It will help us be ENERGY DOMINANT!!!"
+image="https://xstellar.bid/images/BTCTrump.png"
+conditions="This is the Bitcoin pool mined by Donald J Trump team."
+status="live"
+is_asset_anchored=true
+anchor_asset_type="Crypto"
+anchor_asset="BTC"
+
+[[CURRENCIES]]
+code="USTRY"
+name="USTRY"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+is_asset_anchored=true
+display_decimals=7
+status="live"
+desc="USTRY is an innovative utility token designed to facilitate seamless transactions and interactions within the USTRY ecosystem. Leveraging the speed and low-cost transactions of the Stellar blockchain, USTRY token holders benefit from reduced fees, access to exclusive features, and participation in a vibrant community. Investing in USTRY not only positions you at the forefront of blockchain technology but also opens doors to a myriad of opportunities in the rapidly evolving digital economy."
+image="https://xstellar.bid/images/USTRY.png"
+conditions="There is only 100 billions USTRY Token."
+
+[[CURRENCIES]]
+code="BELG"
+name="Belgium G-Bond 4.75%"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+desc="Belgian Gov Bond Perpetual 4.75% Coupon"
+is_asset_anchored=true
+anchor_asset_type="bond"
+anchor_asset="US Treasury"
+image="https://xstellar.bid/images/BELG.png"
+status="live"
+
+[[CURRENCIES]]
+code="1ozSILVER"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+status="live"
+display_decimals=7
+name="1ozSILVER"
+fixed_number=200000000000
+desc="1ozSILVER"
+conditions="Max. supply 200000000000"
+image="https://xstellar.bid/images/1ozSILVER.png"
+
+[[CURRENCIES]]
+code="SIEMENS"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+name="Siemens AG"
+desc="Siemens AG"
+is_asset_anchored=true
+regulated=true
+anchor_asset_type="stock"
+anchor_asset="SIEMENS"
+display_decimals=7
+image="https://xstellar.bid/images/SIEMENS.png"
+status="live"
+
+[[CURRENCIES]]
+code="THRV"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+fixed_number=100000000000
+is_asset_anchored=false
+name="Terrahavest"
+desc="TerraHavest (THRV) is a transformative blockchain inspired idea that brings transparency, efficiency, and innovation to the agriculture and food supply chain. It is indeed Blockchain for a Sustainable Agricultural Future"
+conditions="We will send 2% of holder's balance every 24hrs, Eligible to holders with minimum 1 THRV"
+image="https://xstellar.bid/images/THRV.png"
+
+[[CURRENCIES]]
+code="CLE"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+name="celestia"
+desc="In an era where digital interactions shape the way we live, work, and connect, Celestia (CLE) emerges as a beacon of innovation and empowerment. As a pioneering token on the blockchain, Celestia (CLE) is designed to revolutionize the way we engage with digital assets, decentralized applications, and each other."
+display_decimals=7
+image="https://xstellar.bid/images/CLE.png"
+status="live"
+
+[[CURRENCIES]]
+code="OVRL"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+name="Overlumens"
+status="live"
+desc="Overlumens is more than just a token—it's your gateway to a thriving ecosystem."
+fixed_number=100000000000
+conditions="There will only ever be 100 billion OVRL tokens in existence."
+image="https://xstellar.bid/images/OVRL.png"
+
+[[CURRENCIES]]
+code="PI"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+name="Pi Network"
+desc="Pi Network"
+is_asset_anchored=true
+regulated=false
+anchor_asset_type="crypto"
+anchor_asset="PI"
+display_decimals=7
+image="https://xstellar.bid/images/PI.png"
+status="live"
+
+[[CURRENCIES]]
+code="PAXGold"
+name="PAX Gold (PAXG)"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+desc="PAX Gold (PAXG) is a digital asset where one token is backed by one fine troy ounce (t oz) of a 400 oz London Good Delivery gold bar, stored in Brink’s gold vaults. Anyone who owns PAXG owns the underlying physical gold, held in custody by Paxos Trust Company."
+image="https://xstellar.bid/images/PAXGold.png"
+conditions="Unlimited Supply"
+anchor_asset_type="Stock"
+anchor_asset="GOLD"
+
+[[CURRENCIES]]
+code="NXSP"
+issuer="GCLBPJRBOSVNCUSE4EKJOX44IXSZ6KRS2HDFPNU7HXMK5A32KO7TJRMN"
+display_decimals=7
+fixed_number=100000000000
+is_asset_anchored=false
+name="Nexspace"
+desc="NXSP is the official asset code for Nexspace, the revolutionary VR platform that redefines how people design, shop, and connect in immersive 3D environments. Representing the next evolution of virtual experiences, NXSP symbolizes innovation, scalability, and limitless possibilities. As a key identifier of Nexspace’s ecosystem, NXSP is your gateway to the future of virtual reality."
+conditions="Every NXSP holder will earn daily dividends amounting to 0.15% of their holdings. The total supply of NXSP is capped at 100 billion, with the issuing account permanently locked to ensure transparency and security."
+image="https://xstellar.bid/images/NXSP.png"
