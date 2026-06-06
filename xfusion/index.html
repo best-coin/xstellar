@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Blockchain & Next-Gen Assets | XFusion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0D1B2A;
+            --secondary: #1B263B;
+            --accent: #FF6B6B;
+            --text: #E0E1DD;
+            --highlight: #778DA9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), #FF8E8E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cta-btn {
+            background: linear-gradient(90deg, var(--accent), #FF8E8E);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .cta-btn.secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 107, 107, 0.15) 0%, transparent 60%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(90deg, white, var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 500px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-50%) translateX(-20px); }
+            100% { transform: translateY(-50%) translateX(0); }
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent), #FF8E8E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            background: linear-gradient(90deg, var(--accent), #FF8E8E);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
+            opacity: 0.9;
+        }
+        
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Assets Section */
+        .assets {
+            padding: 100px 0;
+        }
+        
+        .assets-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .asset-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .asset-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+        }
+        
+        .asset-image {
+            height: 150px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(119, 141, 169, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .asset-details {
+            padding: 20px;
+        }
+        
+        .asset-name {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .asset-desc {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .asset-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .asset-link:hover {
+            gap: 10px;
+            text-decoration: underline;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(27, 38, 59, 0.9)), url('https://xfusion.site/1620121478247-ec786b9be2fa.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, white, var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), #FF8E8E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            color: var(--text);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-newsletter p {
+            opacity: 0.8;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            border-radius: 30px;
+            color: var(--text);
+            outline: none;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(224, 225, 221, 0.6);
+        }
+        
+        .newsletter-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background: #ff5252;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                padding-top: 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image {
+                width: 40%;
+                opacity: 0.7;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .steps::before {
+                left: 25px;
+                top: 0;
+                bottom: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                text-align: center;
+                padding-top: 120px;
+                height: auto;
+                padding-bottom: 100px;
+            }
+            
+            .hero-content {
+                align-items: center;
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://xfusion.site/644ea69607a86564b95ebc575c2e62055c209b20.png" alt="Stellar Logo">
+                <span class="logo-text">XFusion</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#assets">Assets</a></li>
+                    <li><a href="#cta">Get Started</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animated">
+                <h1 class="animated delay-1">Next-Gen Assets on Stellar Blockchain</h1>
+                <p class="animated delay-2">Experience the future of digital assets with XFusion's innovative platform built on Stellar's lightning-fast, secure, and scalable blockchain technology.</p>
+                <div class="hero-buttons animated delay-3">
+                    <a href="https://stellarterm.com/markets/?search=xfusion.site" class="cta-btn">Discover Tokens</a>
+                    <a href="#features" class="cta-btn secondary">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://xfusion.site/f9f631121590d4670008809c8b8bf6512d43522d.png" alt="Stellar Blockchain" style="width:100%">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item animated">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Second Transactions</div>
+            </div>
+            <div class="stat-item animated delay-1">
+                <div class="stat-number" data-target="1000">0</div>
+                <div class="stat-label">Transactions per Second</div>
+            </div>
+            <div class="stat-item animated delay-2">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Countries Supported</div>
+            </div>
+            <div class="stat-item animated delay-3">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Supported Assets</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header animated">
+                <h2>Powerful Features</h2>
+                <p>XFusion leverages Stellar's blockchain to provide cutting-edge solutions for the next generation of digital assets.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Transactions settle in 3-5 seconds with minimal fees, perfect for high-frequency trading and microtransactions.</p>
+                </div>
+                <div class="feature-card animated delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Bank-Grade Security</h3>
+                    <p>Enterprise-level security protocols and decentralized architecture protect your assets from unauthorized access.</p>
+                </div>
+                <div class="feature-card animated delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Cross-Border Payments</h3>
+                    <p>Send and receive payments globally with Stellar's built-in decentralized exchange and asset conversion.</p>
+                </div>
+                <div class="feature-card animated delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Developer Friendly</h3>
+                    <p>Comprehensive APIs and SDKs make it easy to build and integrate with XFusion's platform.</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Tokenization</h3>
+                    <p>Create and manage custom assets with our simple tokenization platform on Stellar blockchain.</p>
+                </div>
+                <div class="feature-card animated delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Insights</h3>
+                    <p>Real-time analytics and market data to help you make informed trading decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header animated">
+                <h2>How It Works</h2>
+                <p>Getting started with XFusion and Stellar blockchain is simple and straightforward.</p>
+            </div>
+            <div class="steps">
+                <div class="step animated">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create a Wallet</h3>
+                        <p>Download and set up a Stellar wallet like StellarTerm or connect your Ledger hardware wallet for maximum security.</p>
+                    </div>
+                </div>
+                <div class="step animated delay-1">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Fund Your Account</h3>
+                        <p>Deposit lumens (XLM) or other supported assets to your wallet from exchanges or other Stellar addresses.</p>
+                    </div>
+                </div>
+                <div class="step animated delay-2">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Access XFusion</h3>
+                        <p>Connect your wallet to XFusion's platform to explore and trade the next generation of digital assets.</p>
+                    </div>
+                </div>
+                <div class="step animated delay-3">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Trade & Manage</h3>
+                        <p>Start trading, creating, or managing assets with our intuitive interface and powerful tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assets Section -->
+    <section class="assets" id="assets">
+        <div class="container">
+            <div class="section-header animated">
+                <h2>Featured Assets</h2>
+                <p>Discover the next generation of assets available on XFusion powered by Stellar blockchain.</p>
+            </div>
+            <div class="assets-container">
+                <div class="asset-card animated">
+                    <div class="asset-image">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="asset-details">
+                        <h3 class="asset-name">XFusion Token</h3>
+                        <p class="asset-desc">The native utility token powering the XFusion ecosystem with governance and staking rewards.</p>
+                        <a href="https://stellarterm.com" class="asset-link">Trade Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="asset-card animated delay-1">
+                    <div class="asset-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="asset-details">
+                        <h3 class="asset-name">Stablecoins</h3>
+                        <p class="asset-desc">USD, EUR, and other fiat-backed stablecoins with instant settlements and low fees.</p>
+                        <a href="https://stellarterm.com" class="asset-link">Trade Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="asset-card animated delay-2">
+                    <div class="asset-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="asset-details">
+                        <h3 class="asset-name">Precious Metals</h3>
+                        <p class="asset-desc">Digitally tokenized gold, silver, and platinum assets backed by physical reserves.</p>
+                        <a href="https://stellarterm.com" class="asset-link">Trade Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="asset-card animated delay-3">
+                    <div class="asset-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="asset-details">
+                        <h3 class="asset-name">Real Estate</h3>
+                        <p class="asset-desc">Fractional ownership of premium real estate properties through tokenized assets.</p>
+                        <a href="https://stellarterm.com" class="asset-link">Trade Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="animated">Ready to Experience the Future?</h2>
+                <p class="animated delay-1">Join thousands of users who are already benefiting from the speed, security, and innovation of Stellar blockchain through XFusion.</p>
+                <a href="https://stellarterm.com/markets/?search=xfusion.site" class="cta-btn animated delay-2">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://xfusion.site/644ea69607a86564b95ebc575c2e62055c209b20.png" alt="Stellar Logo" style="height: 25px;">
+                        <span class="footer-logo-text">XFusion</span>
+                    </div>
+                    <p>Building the future of digital assets on Stellar blockchain with innovative solutions and unparalleled performance.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/StellarOrg" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/c/StellarDevelopmentFoundation" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://t.me/stellarbfts" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#assets">Assets</a></li>
+                        <li><a href="https://stellarterm.com">StellarTerm</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://stellar.org/developers" target="_blank">Developer Docs</a></li>
+                        <li><a href="https://stellar.org/learn" target="_blank">Learn Stellar</a></li>
+                        <li><a href="https://stellar.org/blog" target="_blank">Blog</a></li>
+                        <li><a href="https://stellar.org/community" target="_blank">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to stay updated with the latest from XFusion and Stellar ecosystem.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 XFusion. All rights reserved. Built on Stellar blockchain.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+
+        // Animate stats numbers
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const duration = 2000;
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    stat.textContent = Math.floor(current);
+                    
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 16);
+            });
+        }
+
+        // Check if stats section is in view
+        function handleScrollAnimations() {
+            const statsSection = document.querySelector('.stats');
+            const statsSectionTop = statsSection.offsetTop;
+            const windowHeight = window.innerHeight;
+            
+            if (window.scrollY > statsSectionTop - windowHeight + 100) {
+                animateStats();
+                window.removeEventListener('scroll', handleScrollAnimations);
+            }
+        }
+
+        // Initialize
+        window.addEventListener('scroll', handleScrollAnimations);
+        handleScrollAnimations(); // Check on load in case already in view
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input').value;
+            
+            // In a real app, you would send this to your server
+            console.log('Subscribed with email:', email);
+            
+            // Show success message
+            this.querySelector('.newsletter-input').value = '';
+            alert('Thank you for subscribing!');
+        });
+    </script>
+</body>
+</html>
