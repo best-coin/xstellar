@@ -1,0 +1,105 @@
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+[DOCUMENTATION]
+ORG_NAME="XFUSION"
+ORG_URL="https://xstellar.bid/xfusion"
+ORG_LOGO="https://xstellar.bid/xfusion/images/XLM.png"
+ORG_DESCRIPTION="The centre of the Sun where fusion occurs"
+
+[[CURRENCIES]]
+code="1ozSILVER"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/1ozSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="ARMYXLM"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/ARMYXLM.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="AUSILVER"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/AUSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="EGG"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/EGG.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="JOHN"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusione/images/JOHN.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="RLUSD"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/RLUSD.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="RUSILVER"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/RUSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="USGold"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/USGold.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="XAGTOK"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/XAGTOK.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="XLMUSD"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/XLMUSD.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="wSHX"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/wSHX.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="wXXA"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/wXXA.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="yXDC"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/yXDC.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="yXRP"
+issuer="GB2DXVMZ3NMZ7LICIN7OGNFOK7CKISPT5OOVOO5HTYOD53DNTX235GPT"
+image="https://xstellar.bid/xfusion/images/yXRP.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
