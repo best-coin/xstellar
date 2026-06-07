@@ -1,0 +1,64 @@
+[DOCUMENTATION]
+ORG_NAME="TOKENCY"
+ORG_URL="https://xstellar.bid/tokency"
+ORG_LOGO="https://xstellar.bid/tokency/logo.png"
+
+[[CURRENCIES]]
+code="LUMENGOLD"
+name="LUMENGOLD"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="LUMENGOLD is a radiant and innovative brand that embodies the perfect fusion of luxury, elegance, and cutting-edge technology. Specializing in high-end lighting solutions, LUMENGOLD creates exquisite fixtures and luminaires designed to transform any space into a breathtaking environment. Each piece is meticulously crafted with precision engineering and premium materials, ensuring both aesthetic appeal and superior performance."
+image="https://xstellar.bid/tokency/images/lumengold.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="REDBIT"
+name="REDBIT"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="REDBIT is a dynamic and forward-thinking brand that thrives at the intersection of innovation, performance, and style. With a bold name inspired by strength, passion, and precision, REDBIT delivers cutting-edge solutions tailored for modern lifestyles. Whether it’s consumer electronics, tech gadgets, or performance-driven accessories, REDBIT stands out as a symbol of reliability and ingenuity."
+image="https://xstellar.bid/tokency/images/redbit.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="RIPPLE"
+name="RIPPLE"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="RIPPLE is a brand that embodies the beauty of connection, transformation, and subtle yet profound impact. Inspired by the natural phenomenon of ripples spreading across water, the brand represents how small actions can create meaningful change—whether in design, technology, or everyday living."
+image="https://xstellar.bid/tokency/images/ripple.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="TICS"
+name="TICS"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="TICS is a brand that thrives at the intersection of technology, innovation, and style—crafted for those who live life on the cutting edge. With a name inspired by precision and rhythm, TICS delivers smart solutions designed to elevate everyday experiences through sleek design and advanced functionality."
+image="https://xstellar.bid/tokency/images/tics.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="TLDR"
+name="TLDR"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="The brand appeals to modern individuals who value straightforwardness and sophistication—those who seek high-performance solutions that align with their fast-paced, no-nonsense lifestyle. TLDR doesn’t just simplify your choices; it amplifies your ability to focus on what’s important."
+image="https://xstellar.bid/tokency/images/tldr.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
+
+[[CURRENCIES]]
+code="WORLD"
+name="WORLD"
+issuer="GAEEFZK2BAFSBRVG5B6XNFG4ROSEZ5N4GNQCZOOGDVAGVXEPTFMFBRXF"
+desc="WORLD is a brand that transcends boundaries, cultures, and perspectives, embodying the spirit of global connection and exploration. With an ethos rooted in inclusivity, diversity, and innovation, WORLD brings together people, ideas, and experiences from every corner of the globe to create something truly universal."
+image="https://xstellar.bid/tokency/images/world.png"
+status="live"
+display_decimals=7
+fixed_number=100000000000
